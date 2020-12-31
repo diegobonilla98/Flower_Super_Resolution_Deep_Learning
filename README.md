@@ -162,13 +162,7 @@ Total params: 11,378,225
 Trainable params: 11,378,225
 Non-trainable params: 0
 __________________________________________________________________________________________________
-Found dataset with 16 images.
-2020-12-31 12:13:34.144877: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
-2020-12-31 12:13:34.671445: W tensorflow/stream_executor/cuda/redzone_allocator.cc:312] Not found: ./bin/ptxas not found
-Relying on driver to perform ptx compilation. This message will be only logged once.
-2020-12-31 12:13:34.690541: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
 
-Process finished with exit code 0
 
 ## Results
 
