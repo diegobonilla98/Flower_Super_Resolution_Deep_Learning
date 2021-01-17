@@ -1,6 +1,9 @@
 # Flower_Super_Resolution_Deep_Learning
 Test on super resolution using perceptual loss
 
+**New model uses a GAN and Perceptual mixture inspired by SRGAN**
+
+
 ## Model
 
 Model: "model_1"
