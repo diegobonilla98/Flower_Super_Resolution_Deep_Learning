@@ -11,6 +11,8 @@ class DataLoader:
         self.data_path = data_path
         self.target_size = target_size
         self.all_images = np.array(glob.glob(os.path.join(data_path, '*')))
+        self.test_images = self.all_images[-3:]
+        self.all_images = self.all_images[:-3]
         self.num_images = len(self.all_images)
         print(f'Found dataset with {self.num_images} images.')
 
@@ -27,7 +29,8 @@ class DataLoader:
         return (image.astype('float32') - 127.5) / 127.5
 
     def load_batch(self, batch_size):
-        indexes = np.random.randint(low=0, high=self.num_images - 1, size=(batch_size,)).astype(int)
+        indexes = np.random.choice(self.num_images, batch_size, replace=False)
+        # indexes = np.random.randint(low=0, high=self.num_images - 1, size=(batch_size,)).astype(int)
         batch_y = np.array([self.load_image(p, loading='y') for p in self.all_images[indexes]], 'float32')
         batch_x = np.array([self.load_image(p, loading='x') for p in self.all_images[indexes]], 'float32')
         return batch_x, batch_y
